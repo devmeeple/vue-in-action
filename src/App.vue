@@ -1,85 +1,38 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
+<!-- Options API Style -->
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <div>{{ count }}</div>
+  <h1>Vue.js Life cycle</h1>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
+<script lang="ts">
+import { defineComponent } from 'vue';
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+export default defineComponent({
+  data() {
+    return {
+      count: 0,
+    };
+  },
+  beforeCreate() {
+    console.log('컴포넌트 생성 전: beforeCreate 시작', this.count); // undefined
+    // this.test(); [에러] 컴포넌트 생성 전에 함수 접근 불가
+  },
+  created() {
+    console.log('컴포넌트 생성된 직후: created', this.count); // 0
+    this.test(); // [성공] 컴포넌트 생성 후 함수 접근 가능
+  },
+  // beforeMount() {
+  //   console.log('UI 생성 전: beforeMount', document.querySelector('h1'));
+  // },
+  // mounted() {
+  //   console.log('UI 생성 후: mounted', document.querySelector('h1'));
+  // },
+  methods: {
+    test() {
+      console.log('test 함수 호출');
+    },
+  },
+});
+</script>
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
+<style scoped></style>
