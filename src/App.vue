@@ -5,11 +5,16 @@
     <!--    <div v-else class="yellow"></div>-->
 
     <!-- 변수 값이 아닌 v-if 문 안에 담긴 조건이 참 일때 실행 -->
-    <div v-if="count > 1" class="red"></div>
-    <div v-else class="blue"></div>
+    <!--    <div v-if="count > 1" class="red"></div>-->
+    <!--    <div v-else class="blue"></div>-->
 
-    <button @click="count++">증가</button>
-    <button @click="count--">감소</button>
+    <!--    <button @click="count++">증가</button>-->
+    <!--    <button @click="count&#45;&#45;">감소</button>-->
+
+    <div v-show="isVisible" class="red"></div>
+    <div v-show="!isVisible" class="blue"></div>
+
+    <div v-if="isVisible" class="yellow"></div>
   </div>
 </template>
 
@@ -19,7 +24,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   data() {
     return {
-      isVisible: true,
+      isVisible: false,
       count: 0,
     };
   },
