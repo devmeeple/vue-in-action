@@ -1,20 +1,13 @@
 <template>
   <div>
-    <!--    <div v-if="isVisible" class="red"></div>-->
-    <!--    <div v-if="isVisible === true" class="blue"></div>-->
-    <!--    <div v-else class="yellow"></div>-->
-
-    <!-- 변수 값이 아닌 v-if 문 안에 담긴 조건이 참 일때 실행 -->
-    <!--    <div v-if="count > 1" class="red"></div>-->
-    <!--    <div v-else class="blue"></div>-->
-
-    <!--    <button @click="count++">증가</button>-->
-    <!--    <button @click="count&#45;&#45;">감소</button>-->
-
-    <div v-show="isVisible" class="red"></div>
-    <div v-show="!isVisible" class="blue"></div>
-
-    <div v-if="isVisible" class="yellow"></div>
+    <li v-for="book in books" :key="book">
+      {{ book }}
+    </li>
+    <!-- 키 값은 필수, 유니크(고유한 값) 해야 한다 -->
+    <div v-for="item in items" :key="item.id">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.content }}</p>
+    </div>
   </div>
 </template>
 
@@ -24,29 +17,22 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   data() {
     return {
-      isVisible: false,
-      count: 0,
+      books: ['모던 자바스크립트', 'Node.js 백엔드 개발자 되기', '개발자가 되고 싶습니다'],
+      items: [
+        {
+          id: 0,
+          title: '코어 자바크립트',
+          content: '핵심 개념과 동작 원리로 이해하는 자바스크립트 프로그래밍',
+        },
+        {
+          id: 1,
+          title: 'NestJS로 배우는 백엔드 프로그래밍',
+          content: '가장 진보한 프레임워크로 백엔드에 입문하는 방법',
+        },
+      ],
     };
   },
 });
 </script>
 
-<style scoped>
-.red {
-  background-color: red;
-  width: 100px;
-  height: 100px;
-}
-
-.blue {
-  background-color: blue;
-  width: 100px;
-  height: 100px;
-}
-
-.yellow {
-  background-color: yellow;
-  width: 100px;
-  height: 100px;
-}
-</style>
+<style scoped></style>
