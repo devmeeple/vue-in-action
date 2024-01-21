@@ -1,7 +1,14 @@
-<!-- Options API Style -->
 <template>
-  <div>{{ count }}</div>
-  <h1>Vue.js Life cycle</h1>
+  <div>{{ rawHtml }}</div>
+  <div>{{ rawHtml2 }}</div>
+  <h1 v-html="rawHtml2"></h1>
+
+  <h2 v-bind:class="{ active: isActive }">클래스 바인딩</h2>
+  <h2 :class="{ active: isActive }">클래스 바인딩 축약</h2>
+  <button @click="change">버튼</button>
+
+  <h3 style="color: red">스타일 바인딩: 인라인</h3>
+  <h3 :style="{ color: fontColor }">스타일 바인딩</h3>
 </template>
 
 <script lang="ts">
@@ -10,29 +17,22 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   data() {
     return {
-      count: 0,
+      rawHtml: '선언적 렌더링',
+      rawHtml2: '<span style="color: red">빨간색</span>',
+      isActive: false,
+      fontColor: 'green',
     };
   },
-  beforeCreate() {
-    console.log('컴포넌트 생성 전: beforeCreate 시작', this.count); // undefined
-    // this.test(); [에러] 컴포넌트 생성 전에 함수 접근 불가
-  },
-  created() {
-    console.log('컴포넌트 생성된 직후: created', this.count); // 0
-    this.test(); // [성공] 컴포넌트 생성 후 함수 접근 가능
-  },
-  // beforeMount() {
-  //   console.log('UI 생성 전: beforeMount', document.querySelector('h1'));
-  // },
-  // mounted() {
-  //   console.log('UI 생성 후: mounted', document.querySelector('h1'));
-  // },
   methods: {
-    test() {
-      console.log('test 함수 호출');
+    change() {
+      this.isActive = !this.isActive;
     },
   },
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+h2.active {
+  color: green;
+}
+</style>
