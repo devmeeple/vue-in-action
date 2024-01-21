@@ -1,14 +1,16 @@
 <template>
-  <div>{{ rawHtml }}</div>
-  <div>{{ rawHtml2 }}</div>
-  <h1 v-html="rawHtml2"></h1>
+  <div>
+    <!--    <div v-if="isVisible" class="red"></div>-->
+    <!--    <div v-if="isVisible === true" class="blue"></div>-->
+    <!--    <div v-else class="yellow"></div>-->
 
-  <h2 v-bind:class="{ active: isActive }">클래스 바인딩</h2>
-  <h2 :class="{ active: isActive }">클래스 바인딩 축약</h2>
-  <button @click="change">버튼</button>
+    <!-- 변수 값이 아닌 v-if 문 안에 담긴 조건이 참 일때 실행 -->
+    <div v-if="count > 1" class="red"></div>
+    <div v-else class="blue"></div>
 
-  <h3 style="color: red">스타일 바인딩: 인라인</h3>
-  <h3 :style="{ color: fontColor }">스타일 바인딩</h3>
+    <button @click="count++">증가</button>
+    <button @click="count--">감소</button>
+  </div>
 </template>
 
 <script lang="ts">
@@ -17,22 +19,29 @@ import { defineComponent } from 'vue';
 export default defineComponent({
   data() {
     return {
-      rawHtml: '선언적 렌더링',
-      rawHtml2: '<span style="color: red">빨간색</span>',
-      isActive: false,
-      fontColor: 'green',
+      isVisible: true,
+      count: 0,
     };
-  },
-  methods: {
-    change() {
-      this.isActive = !this.isActive;
-    },
   },
 });
 </script>
 
 <style scoped>
-h2.active {
-  color: green;
+.red {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+}
+
+.blue {
+  background-color: blue;
+  width: 100px;
+  height: 100px;
+}
+
+.yellow {
+  background-color: yellow;
+  width: 100px;
+  height: 100px;
 }
 </style>
