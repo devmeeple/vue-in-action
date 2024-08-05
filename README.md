@@ -1,46 +1,29 @@
-# vue-in-action
+# Vue In Action
 
-This template should help get you started developing with Vue 3 in Vite.
+1. 정의와 구조파악
+2. 개발스타일 (Options API vs Composition API)
+3. LifeCycle 이해
+4. 핵심문법 1(UserInterface)
+    - 선언적 렌더링(텍스트보간법 & v-html)
+    - Class와 Style 바인딩
+    - 조건부렌더링 (v-if와 v-show)
+    - 리스트렌더링 (v-for)
+5. 핵심문법 2(Data)
+    - 이벤트 핸들링
+    - Computed
+    - Watch
+    - Props와 Emits
+    - v-model
+6. 컴포넌트(Component)
+    - 정의와 활용방법
+    - Slot을 활용한 컴포넌트 동적활용
+7. 디자인패턴(Atomic Design Pattern)
+8. 컴포지션 API(Composition API)
+    - Setup 키워드란?
+    - Options API와 비교하며 살펴보기
+    - TypeScript와는 어떻게 접목시킬 수 있을까?
 
-## Recommended IDE Setup
+**<참고 자료>**
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+* [Vue.js](https://ko.vuejs.org/guide/introduction.html)
+* [구디사는 개발자 9Diin '2024 Vue.js 개발 가이드 - Full Course (feat. Composition API)'](https://youtu.be/9lWaIhE05m8?si=3gp1eK_cgxDXjpeQ)
