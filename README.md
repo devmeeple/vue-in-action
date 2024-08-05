@@ -70,3 +70,25 @@ Options API, Composition API 두 가지 방식중 선호에 맞는 방식을 선
 **<참고 자료>**
 
 * [생명 주기 훅](https://ko.vuejs.org/guide/essentials/lifecycle.html)
+
+## 4. 핵심문법 1(User Interface)
+
+**<참고 자료>**
+
+* [클래스와 스타일 바인딩](https://ko.vuejs.org/guide/essentials/class-and-style.html)
+* [조건부 렌더링](https://ko.vuejs.org/guide/essentials/conditional.html)
+* [리스트 렌더링](https://ko.vuejs.org/guide/essentials/list.html)
+
+### 선언적 렌더링
+
+데이터바인딩의 기본은 선언적 렌더링이다. `{{ message }}` 문법을 사용한다. 이중 중괄호는 데이터를 일반 텍스트로 해석한다.
+실제 `HTML`로 출력하기 위해서는 `v-html`을 사용한다.
+
+### 조건부 렌더링
+
+* `v-if`의 조건식이 `true`일 때만 렌더링 된다.
+* `v-show`: 항상 렌더링 된다. `css` 속성만 변화한다.
+
+### 리스트 렌더링
+
+* `v-for`: 리스트 렌더링
