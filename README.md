@@ -27,3 +27,14 @@
 
 * [Vue.js](https://ko.vuejs.org/guide/introduction.html)
 * [구디사는 개발자 9Diin '2024 Vue.js 개발 가이드 - Full Course (feat. Composition API)'](https://youtu.be/9lWaIhE05m8?si=3gp1eK_cgxDXjpeQ)
+
+## 1. Vue.js
+
+* 선언적 렌더링(Declarative Rendering): HTML 표준 문법을 확장해서 JavaScript 상태 기반으로 작성한다.
+* 반응성(Reactivity): 상태 변경을 추적한다. 변경이 발생하면 DOM을 효율적으로 업데이트한다.
+* SPA(Single-Page Application): 하나의 페이지에서 유저가 원하는 정보만 보여준다.
+* SFC(Single-File Component): HTML, CSS, JavaScript를 `.vue` 파일 하나에서 관리한다.
+
+**<참고 자료>**
+
+* [소개](https://ko.vuejs.org/guide/introduction.html)
