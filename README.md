@@ -100,11 +100,18 @@ Options API, Composition API 두 가지 방식중 선호에 맞는 방식을 선
 * 인라인 핸들러: 동작하는 코드를 `HTML Element`에 직접 할당한다.
 * 메서드 핸들러: 메서드(함수)를 이벤트 핸들러에 할당한다.
 
-<참고 자료>
+**<참고 자료>**
 
 * [이벤트 핸들링](https://ko.vuejs.org/guide/essentials/event-handling.html)
 
+### 계산된 속성
+
 * `Computed`: 공통적으로 사용되는 로직 혹은 복잡한 로직을 미리 처리해서 계산된 데이터 형태로 만든다. 캐싱(Caching)
+
+**<참고 자료>**
+
+* [계산된 속성](https://ko.vuejs.org/guide/essentials/computed.html)
+
 * `Watch`: 데이터의 변경을 감시하고 있다가 값이 변경되었을 때 로직을 실행한다.
 * `Props` & `Emits` / 데이터 주고받기
     * Props: 부모컴포넌트에서 선언된 데이터를 자식컴포넌트에서 사용 (상위 -> 하위)

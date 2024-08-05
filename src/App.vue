@@ -1,24 +1,30 @@
 <template>
-  <div>
-    <h1>+{{ count }}강</h1>
-    <button @click="count++">인라인 핸들러</button>
-  </div>
+  <h1>{{ text }}</h1>
 
-  <div>
-    <h1>{{ name }}</h1>
-    <button @click="changeName">메서드 핸들러</button>
-  </div>
+  <!-- 3번 호출-->
+  <h1>changeText 호출 값: {{ changeText() }}</h1>
+  <h1>changeText 호출 값: {{ changeText() }}</h1>
+  <h1>changeText 호출 값: {{ changeText() }}</h1>
+
+  <!-- Computed 1번만 호출, 캐싱(Cashing) -->
+  <h2>{{ computedText }}</h2>
+  <h2>{{ computedText }}</h2>
+  <h2>{{ computedText }}</h2>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
-const count = ref(0);
-const name = ref('성공');
-
-const changeName = () => {
-  name.value = '실패';
+const text = ref('Computed 테스트 데이터');
+const changeText = () => {
+  console.log(`함수 호출 ${text.value}`);
+  return text.value.split('').reverse().join('');
 };
+
+const computedText = computed(() => {
+  console.log(`Computed 함수 호촐 ${text.value}`);
+  return text.value.split('').reverse().join('');
+});
 </script>
 
 <style scoped></style>
