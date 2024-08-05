@@ -2,7 +2,7 @@
 
 1. 정의와 구조파악
 2. 개발 스타일 (Options API vs Composition API)
-3. LifeCycle 이해
+3. Lifecycle 이해
 4. 핵심문법 1(UserInterface)
     - 선언적 렌더링(텍스트보간법 & v-html)
     - Class와 Style 바인딩
@@ -58,3 +58,15 @@ Options API, Composition API 두 가지 방식중 선호에 맞는 방식을 선
 * ref, reactive: 반응형 데이터를 선언한다.
 * methods: 객체를 선언하는 방식이 아닌 함수를 직접 만들어서 사용한다.
 * LifeCycle: 컴포넌트 생명주기 여러 단계에 호출한다.
+
+## 3. 생명 주기(Lifecycle)
+
+컴포넌트가 생성되고 소멸되는 단계를 의미한다.
+
+1. created: 마운팅, 렌더링 되기전에 실행된다.
+2. mounted: 렌더링, DOM 노드 생성이 완료된 이후 실행된다.
+3. updated: 컴포넌트 데이터가 변경되어 DOM이 렌더링 된 후 실행된다.
+
+**<참고 자료>**
+
+* [생명 주기 훅](https://ko.vuejs.org/guide/essentials/lifecycle.html)

@@ -1,17 +1,26 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { onBeforeMount, onMounted, ref } from 'vue';
 
 // 반응형 속성
 const count = ref(0);
-const increment = () => count.value++;
+console.log(count.value);
+console.log('LifeCycle is Setup');
+
+const test = () => console.log('함수 호출');
 
 // LifeCycle
+onBeforeMount(() => {
+  test();
+  console.log('LifeCycle onBeforeMount', document.querySelector('h1'));
+});
+
 onMounted(() => {
-  console.log(`초기 값은 ${count.value} 입니다.`);
+  test();
+  console.log(`LifeCycle onMounted`, document.querySelector('h1'));
 });
 </script>
 <template>
-  <button @click="increment">강화하기 {{ count }}</button>
+  <h1>LifeCycle 테스트</h1>
 </template>
 
 <style scoped>
