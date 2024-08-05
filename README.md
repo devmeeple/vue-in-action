@@ -112,7 +112,14 @@ Options API, Composition API 두 가지 방식중 선호에 맞는 방식을 선
 
 * [계산된 속성](https://ko.vuejs.org/guide/essentials/computed.html)
 
+### 감시자(Watchers)
+
 * `Watch`: 데이터의 변경을 감시하고 있다가 값이 변경되었을 때 로직을 실행한다.
+
+**<참고 자료>**
+
+* [감시자(Watchers)](https://ko.vuejs.org/guide/essentials/watchers.html)
+
 * `Props` & `Emits` / 데이터 주고받기
     * Props: 부모컴포넌트에서 선언된 데이터를 자식컴포넌트에서 사용 (상위 -> 하위)
     * Emits: 자식컴포넌트에서 부모컴포넌트로 데이터를 전달 (상위 <- 하위)
