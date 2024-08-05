@@ -1,7 +1,7 @@
 # Vue In Action
 
 1. 정의와 구조파악
-2. 개발스타일 (Options API vs Composition API)
+2. 개발 스타일 (Options API vs Composition API)
 3. LifeCycle 이해
 4. 핵심문법 1(UserInterface)
     - 선언적 렌더링(텍스트보간법 & v-html)
@@ -38,3 +38,23 @@
 **<참고 자료>**
 
 * [소개](https://ko.vuejs.org/guide/introduction.html)
+
+## 2. 개발 스타일
+
+Options API, Composition API 두 가지 방식중 선호에 맞는 방식을 선택한다.
+
+### Options API
+
+`data`, `method`, `mounted`등 객체를 사용하여 컴포넌트 로직을 정의한다.
+
+* data: 컴포넌트에 사용될 상태(State), 데이터를 관리한다.
+* methods: 속성 값을 변경하고 업데이트하는 함수
+* LifeCycle: 컴포넌트 생명주기 여러 단계에 호출한다.
+
+### Composition
+
+내장된 API 함수들을 사용하여 컴포넌트를 정의한다. `<script setup>`과 함께 사용한다.
+
+* ref, reactive: 반응형 데이터를 선언한다.
+* methods: 객체를 선언하는 방식이 아닌 함수를 직접 만들어서 사용한다.
+* LifeCycle: 컴포넌트 생명주기 여러 단계에 호출한다.
